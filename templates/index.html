@@ -1,0 +1,55 @@
+<body style="background-color:#ffffff;">
+    <html>
+        <head>
+            <title> Healthcare Premium Charges Prediction </title>
+        </head>
+        <body>
+        <style>
+            {height:800px; font-size:4pt;}
+        </style>
+        <img src = "https://static.businessworld.in/article/article_extra_large_image/1501136162_oEfseY_data-in-health.jpg" align = 'right' width = 350px>
+        <font size = 6 color = #6600FF> HealtCare Premium Charges Prediction </font>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action = "{{ url_for('prediction')}}" method = "post" align = "left">
+            <p><font color = '#FF2266' size = 4>Enter Age, BMI in the respective order
+            <br>
+            <br>
+            <br>
+            Age <input type = 'text' name = 'age' size = '50' height = '65'/>
+            <br><br>
+            Gender <input type = 'text' name = 'ender' size = '50' height = '65'/>
+            <br>
+            CP <input type = 'text' name = 'cp' size = '50' height = '65'/>
+            <br><br>
+            TrestBPS <input type = 'text' name = 'trestbps' size = '50' height = '65'/>
+            <br><br>
+            Chol <input type = 'text' name = 'chol' size = '50' height = '65'/>
+            <br><br>
+            FBS <input type = 'text' name = 'fbs' size = '50' height = '65'/>
+            <br><br>
+            RestECG <input type = 'text' name = 'restecg' size = '50' height = '65'/>
+            <br><br>
+            ThaLach <input type = 'text' name = 'thelach' size = '50' height = '65'/>
+            <br><br>
+            Exang <input type = 'text' name = 'exang' size = '50' height = '65'/>
+            <br><br>
+            Oldpeak <input type = 'text' name = 'oldpeak' size = '50' height = '65'/>
+            <br><br>
+            Slope <input type = 'text' name = 'slope' size = '50' height = '65'/>
+            <br><br>
+            CA <input type = 'text' name = 'ca' size = '50' height = '65'/>
+            <br><br>
+            Thal <input type = 'text' name = 'thal' size = '50' height = '65'/>
+            <br><br>
+            <br>
+            </font></p>
+            <input type = 'submit' value = 'Predict' style = "font-size:10pt;color:white;background-color:black;"/>
+            <br><br><br>
+            {{ prediction_text }}
+    
+    </form>
+    </body>
+    </html>
