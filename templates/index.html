@@ -1,55 +1,92 @@
-<body style="background-color:#ffffff;">
-    <html>
-        <head>
-            <title> Healthcare Premium Charges Prediction </title>
-        </head>
-        <body>
-        <style>
-            {height:800px; font-size:4pt;}
-        </style>
-        <img src = "https://static.businessworld.in/article/article_extra_large_image/1501136162_oEfseY_data-in-health.jpg" align = 'right' width = 350px>
-        <font size = 6 color = #6600FF> HealtCare Premium Charges Prediction </font>
-        <br>
-        <br>
-        <br>
-        <br>
-        <form action = "{{ url_for('prediction')}}" method = "post" align = "left">
-            <p><font color = '#FF2266' size = 4>Enter Age, BMI in the respective order
-            <br>
-            <br>
-            <br>
-            Age <input type = 'text' name = 'age' size = '50' height = '65'/>
-            <br><br>
-            Gender <input type = 'text' name = 'ender' size = '50' height = '65'/>
-            <br>
-            CP <input type = 'text' name = 'cp' size = '50' height = '65'/>
-            <br><br>
-            TrestBPS <input type = 'text' name = 'trestbps' size = '50' height = '65'/>
-            <br><br>
-            Chol <input type = 'text' name = 'chol' size = '50' height = '65'/>
-            <br><br>
-            FBS <input type = 'text' name = 'fbs' size = '50' height = '65'/>
-            <br><br>
-            RestECG <input type = 'text' name = 'restecg' size = '50' height = '65'/>
-            <br><br>
-            ThaLach <input type = 'text' name = 'thelach' size = '50' height = '65'/>
-            <br><br>
-            Exang <input type = 'text' name = 'exang' size = '50' height = '65'/>
-            <br><br>
-            Oldpeak <input type = 'text' name = 'oldpeak' size = '50' height = '65'/>
-            <br><br>
-            Slope <input type = 'text' name = 'slope' size = '50' height = '65'/>
-            <br><br>
-            CA <input type = 'text' name = 'ca' size = '50' height = '65'/>
-            <br><br>
-            Thal <input type = 'text' name = 'thal' size = '50' height = '65'/>
-            <br><br>
-            <br>
-            </font></p>
-            <input type = 'submit' value = 'Predict' style = "font-size:10pt;color:white;background-color:black;"/>
-            <br><br><br>
-            {{ prediction_text }}
-    
-    </form>
+<html>
+    <head>
+        <title> Heart Disease Prediction </title>
+    </head>
+    <style>
+        body{
+    margin-left: 80px;
+    padding: 0;
+    background-color: moccasin;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading{
+    padding-top: 0;
+    padding-left: 440px;
+}
+
+.details{
+    padding-top: 20px;
+    padding-left: 25px;
+    width: 436px;
+    height: 530px;
+    background: #fff;
+    color: #fff;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+
+.result{
+    padding-top: 100px;
+    padding-left: 580px;
+}
+
+.button{
+    height: 60px;
+    width: 100px;
+    background-color: #fff;
+    border: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.answer{
+    padding-left: 840px;
+}
+    </style>
+    <body>
+        <div class = "heading">
+        <h1>Heart Disease Prediction</h1>
+    </div>
+    <h3>Enter the details</h3>
+            <form action = "{{ url_for('prediction')}}" method = "post" align = "left">
+                <div class = "details">    
+                <input type = 'text' placeholder = "Age in years" name = 'age' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Enter 1 for male and 0 for female" name = 'gender' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Chest pain type (0 - 3)" name = 'cp' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Resting blood pressure (in mm Hg on admission to the hospital)" name = 'trestbps' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Serum cholestoral in mg/dl" name = 'chol' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Enter 1 if fasting blood sugar > 120 mg/dl else enter 0" name = 'fbs' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Resting electrocardiographic results (1 or 0)" name = 'restecg' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Maximum heart rate achieved" name = 'thalach' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Exercise induced angina (1 = yes; 0 = no)" name = 'exang' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "ST depression induced by exercise relative to rest" name = 'oldpeak' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "The slope of the peak exercise ST segment (0 - 2)" name = 'slope' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "number of major vessels (0-3) colored by fluoroscopy" name = 'ca' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Enter 3 for normal, 6 for fixed defect or 7 for reversable defect" name = 'thal' size = '50' height = '65'/>
+                </div>
+                <div class = "result">
+                <button class = "button" type = 'submit' value = 'Predict'>Predict</button>
+                </div>
+                <div class = "answer">
+                <h1>{{ prediction_text }}</h1>
+                </div>
+            </form>
     </body>
-    </html>
+</html>
