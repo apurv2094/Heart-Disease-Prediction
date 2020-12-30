@@ -34,7 +34,7 @@ def prediction():
     if result[0] == 1:
         string = 'Suffering from heart disease'
     else:
-        string = 'Not be suffering from heart disease'
+        string = 'Not suffering from heart disease'
     return render_template('index.html', prediction_text = string)
 
 # running the app
