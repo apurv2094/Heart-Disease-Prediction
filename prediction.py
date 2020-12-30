@@ -17,7 +17,7 @@ data[columns_to_scale] = scaler.fit_transform(data[columns_to_scale])
 x = data.iloc[:, :-1]
 y = data.iloc[:, -1]
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.20)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.20, random_state = 42)
 
 model = LogisticRegression()
 model.fit(x_train, y_train)
