@@ -32,9 +32,9 @@ def prediction():
     result = model.predict(scaled_values)
 
     if result[0] == 1:
-        string = 'Heart Disease Risk'
+        string = 'Suffering from heart disease'
     else:
-        string = 'No Heart Disease Risk'
+        string = 'Not be suffering from heart disease'
     return render_template('index.html', prediction_text = string)
 
 # running the app
